@@ -1,0 +1,25 @@
+table{
+    border-color: blue;
+    border-collapse: collapse;
+    width: 50%;
+}
+
+.special{
+    background-color: dimgrey;
+}
+td,th{
+    padding: 5px;
+    text-align: center;
+    align-content: center;
+}
+li{
+    font-style: italic;
+}
+h1,h2,p{
+    font-family: Tahoma;
+}
+p{
+    font-size: 0.9em;
+    text-align: justify;
+    line-height: 150%;
+}
