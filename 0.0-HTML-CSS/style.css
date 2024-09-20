@@ -1,0 +1,21 @@
+body{
+    background-color: dimgrey;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    font-size: 4em;
+    color: cadetblue;
+    font-family: Broadway,Tahoma;
+    text-align: center;
+}
+
+.ne{
+    color: maroon;
+    text-align: center;
+}
+h2,h3{
+    font-style: italic;
+    text-align: center;
+    font-weight: bold;
+}
