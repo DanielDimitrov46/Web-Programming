@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="utf-8">
+    <title>Създаване и извеждане на JavaScript масив</title>
+</head>
+
+<body>
+
+<h2>JavaScript масиви</h2>
+<!-- Извеждане на масива в параграф -->
+<p id="text-array"></p>
+<!-- Извеждане дължината на масива в елемент <span> на параграф -->
+<p>Броят на градовете е <span id="text-length"></span>.</p>
+
+<script>
+    //Създаване масив като променлива и присвояване на стойности
+    let cities = ["Пловдив", "Варна", "София", "Бургас"];
+    //Промяна на стойността на елемент
+    cities[1] = "Русе";
+    //Промяна на стойността на последния елемент
+    cities[cities.length - 1] = "Поморие";
+    //Добавяне на последен елемент
+    cities[cities.length] = "Видин";
+    //Извеждане на масива
+    document.getElementById("text-array").innerHTML = cities;
+    //Извеждане дължината на масива (броя на елементите) със свойство length
+    document.getElementById("text-length").innerHTML = cities.length;
+</script>
+
+</body>
+</html>

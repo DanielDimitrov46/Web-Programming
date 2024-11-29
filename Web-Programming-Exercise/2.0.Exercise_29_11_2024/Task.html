@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="1"></p>
+    <p id="2"></p>
+    <p id="3"></p>
+    <p id="4"></p>
+    <p id="5"></p>
+    <p id="6"></p>
+    <p id="7"></p>
+    <p id="8"></p>
+</body>
+</html>
+
+<script>
+    function printArray(emodji){
+        let str = ""
+        for (let i=0;i<emodji.length; i++){
+            str+="Element at index "+ i +" is "+emodji[i]+"<br>"
+        }
+        document.getElementById("8").innerHTML = str
+
+    }
+    let emojis = ["&#128557;", "&#129300;", "&#128526;", "&#128161;"];
+    let emojis2 = [];
+    document.getElementById("1").innerHTML = emojis;
+    emojis.push("&#128512;")
+    document.getElementById("2").innerHTML = emojis;
+    emojis.shift()
+    document.getElementById("3").innerHTML = emojis;
+    emojis.splice(4,0,100)
+    document.getElementById("4").innerHTML = emojis;
+    document.getElementById("5").innerHTML = emojis.slice(2,4);
+    let array = ["A","B","C"]
+    document.getElementById("6").innerHTML = emojis.concat(array);
+    printArray(emojis);
+</script>
