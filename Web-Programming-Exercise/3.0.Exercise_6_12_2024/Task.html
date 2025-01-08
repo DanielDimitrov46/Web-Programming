@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>Калкулиране на правилен петоъгълник</h1>
+<br>
+<input type="text" id="myInput" placeholder="Въведи страна А"/>
+<button onclick="result()">Изчисли</button>
+<p id="result"></p>
+
+
+<script>
+    function area(input) {
+        let S = (Math.sqrt(25+10*Math.sqrt(5))/4*input**2)
+        return S;
+    }
+    function perimeter(input) {
+        let P = 5*input;
+        return P;
+    }
+    function result(){
+        let input = Number(document.getElementById("myInput").value);
+        document.getElementById("result").innerHTML= "Area is: "+area(input).toFixed(4)+ " cm2 And perimeter is: "+ perimeter(input).toFixed(4)+" cm"
+    }
+</script>
+</body>
+</html>
+
