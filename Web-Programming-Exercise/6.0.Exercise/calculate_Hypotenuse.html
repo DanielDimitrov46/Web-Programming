@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Изчисляване на хипотенуза</title>
+</head>
+<body>
+<h1>Изчисляване на хипотенуза на правоъгълен триъгълник</h1>
+
+<!-- Полица за резултата -->
+<p id="result"></p>
+
+<!-- Включване на JavaScript файл -->
+<script>// Функция за изчисляване на хипотенузата
+const calculateHypotenuse = (a, b) => {
+    // Вложена функция за изчисляване на квадратен корен
+    const squareRoot = (x) => Math.sqrt(x);
+
+    // Изчисляване на хипотенузата с формулата a^2 + b^2 = c^2
+    const hypotenuse = squareRoot(a * a + b * b);
+
+    // Извеждаме резултата на страницата
+    document.getElementById('result').textContent = `Хипотенузата на триъгълника с катети ${a} и ${b} е: ${hypotenuse.toFixed(2)}`;
+};
+
+// Примерни стойности за катетите
+calculateHypotenuse(3, 4); // Ще изведе 5.00 (за триъгълник със страни 3 и 4)
+</script>
+</body>
+</html>

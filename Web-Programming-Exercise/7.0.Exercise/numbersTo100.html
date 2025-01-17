@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Числа от 1 до 100</title>
+    <style>
+        /* Стил за блока с фон */
+        #numberBlock {
+            background-color: #f0f0f0;
+            padding: 20px;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            border: 2px solid #ccc;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+<h1>Числа от 1 до 100</h1>
+
+<!-- Блок за числата -->
+<div id="numberBlock"></div>
+
+<script>
+    // Функция за генериране на числата от 1 до 100
+    function generateNumbers() {
+        let numbers = [];
+
+        // Генерираме числата от 1 до 100
+        for (let i = 1; i <= 100; i++) {
+            numbers.push(i);
+        }
+
+        // Извеждаме числата в блок с фон, като ги разделяме със запетая
+        document.getElementById("numberBlock").textContent = numbers.join(", ");
+    }
+
+    // Извикваме функцията, за да генерираме числата
+    generateNumbers();
+</script>
+</body>
+</html>

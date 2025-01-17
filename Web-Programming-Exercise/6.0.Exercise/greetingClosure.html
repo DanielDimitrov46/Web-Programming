@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приветствие с Closures</title>
+</head>
+<body>
+<h1>Приветстваме ви чрез Closure!</h1>
+<p id="greeting"></p>
+
+<script>
+    // Глобална променлива
+    let globalGreeting = "Здравей, потребителю!";
+
+    // Closure функция за генериране на персонализирано приветствие
+    const createGreeting = (name) => {
+        // Локална променлива
+        let localMessage = `Добре дошъл, ${name}!`;
+
+        // Closure: функция, която използва локални и глобални променливи
+        return () => {
+            // Използване на глобалната променлива и локалната
+            return `${globalGreeting} ${localMessage}`;
+        };
+    };
+
+    // Създаване на closure с име "Иван"
+    const greetingMessage = createGreeting("Иван");
+
+    // Извеждане на резултата в уеб страницата
+    document.getElementById("greeting").textContent = greetingMessage(); // Ще изведе: "Здравей, потребителю! Добре дошъл, Иван!"
+</script>
+</body>
+</html>

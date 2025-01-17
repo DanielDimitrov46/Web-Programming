@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Извеждане на звание</title>
+</head>
+<body>
+<h1>Извеждане на звание на личност</h1>
+
+<p id="result"></p>
+
+<script>
+    // Функция за извеждане на звание на личност
+    function displayTitle(name, title, profession) {
+        // Форматиране на съобщението
+        const message = `${title} ${name}, който е ${profession}.`;
+
+        // Извеждаме резултата на уеб страницата
+        document.getElementById("result").textContent = message;
+    }
+
+    // Пример за извикване на функцията с различни параметри
+    displayTitle("Иван Иванов", "Доктор", "лекар");
+</script>
+</body>
+</html>

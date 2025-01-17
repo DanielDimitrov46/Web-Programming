@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Промяна на размер на текста</title>
+    <style>
+        /* Начален стил за текста */
+        #text {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<h1>Променете размера на текста!</h1>
+<p id="text">Това е примерен текст. Можете да променяте неговия размер чрез бутоните по-долу.</p>
+
+<!-- Бутоните за промяна на размера на текста -->
+<button onclick="changeTextSize(12)">12px</button>
+<button onclick="changeTextSize(14)">14px</button>
+<button onclick="changeTextSize(16)">16px</button>
+
+<script>
+    // Функция за промяна на размера на текста
+    function changeTextSize(size) {
+        // Променяме размера на текста на елемента с id="text"
+        document.getElementById("text").style.fontSize = size + "px";
+    }
+</script>
+</body>
+</html>

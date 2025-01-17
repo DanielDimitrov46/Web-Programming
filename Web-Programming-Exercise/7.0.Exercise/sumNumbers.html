@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="bg">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сумиране на числа</title>
+</head>
+<body>
+<h1>Сумиране на множество числа</h1>
+
+<p id="result"></p>
+
+<script>
+    // Функция за сумиране на множество подадени числа
+    function sumNumbers(...numbers) {
+    let sum = 0;
+
+    // Цикъл за събиране на всички числа
+    for (let number of numbers) {
+    sum += number;
+}
+
+    // Извеждаме резултата в уеб страницата
+    document.getElementById("result").textContent = "Резултатът от сумата е: " + sum;
+}
+
+    // Пример за извикване на функцията с произволен брой аргументи
+    sumNumbers(5, 10, 15, 20, 25);  // Тези числа ще бъдат събрани
+</script>
+</body>
+</html>

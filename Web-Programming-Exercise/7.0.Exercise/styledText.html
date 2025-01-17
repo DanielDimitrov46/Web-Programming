@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стилизиран текст с цикъл</title>
+    <style>
+        /* Стил за всяка буква */
+        .letter {
+            display: block; /* Прави всяка буква на нов ред */
+            font-size: 24px; /* Размер на шрифта */
+            font-family: Arial, sans-serif; /* Шрифт */
+            color: #4CAF50; /* Зелен цвят */
+            font-weight: bold; /* Дебел шрифт */
+            margin: 5px 0; /* Отстояние между буквите */
+        }
+    </style>
+</head>
+<body>
+<h1>Стилизиран текст с цикъл</h1>
+<div id="textContainer"></div>
+
+<script>
+    // Текстът, който ще бъде изведен
+    const text = "Здравей свят!";
+
+    // Вземаме контейнера, в който ще поставим буквите
+    const container = document.getElementById("textContainer");
+
+    // Цикъл за преминаване през всяка буква в текста
+    for (let i = 0; i < text.length; i++) {
+        // Създаваме нов елемент <span> за всяка буква
+        const letterElement = document.createElement("span");
+
+        // Задаваме текстово съдържание на елемента с текущата буква
+        letterElement.textContent = text[i];
+
+        // Добавяме клас за стилизиране на буквата
+        letterElement.classList.add("letter");
+
+        // Добавяме елемента към контейнера
+        container.appendChild(letterElement);
+    }
+</script>
+</body>
+</html>
