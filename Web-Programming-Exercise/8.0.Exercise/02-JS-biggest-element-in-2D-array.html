@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Двуимен масив с различен брой елементи</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Двуимен масив с различен брой елементи</h1>
+
+<div id="arrayTable"></div>
+
+<script>
+    // Създаваме двумерен масив с различен брой елементи във всеки ред
+    const array = [
+        [1, 2, 3],              // Първи ред: 3 елемента
+        [4, 5],                 // Втори ред: 2 елемента
+        [6, 7, 8, 9],           // Трети ред: 4 елемента
+        [10]                    // Четвърти ред: 1 елемент
+    ];
+
+    // Генерираме HTML таблица
+    let tableHTML = "<table>";
+    for (let i = 0; i < array.length; i++) {
+        tableHTML += "<tr>";
+        for (let j = 0; j < array[i].length; j++) {
+            tableHTML += `<td>${array[i][j]}</td>`;
+        }
+        tableHTML += "</tr>";
+    }
+    tableHTML += "</table>";
+
+    // Показваме таблицата в контейнера
+    document.getElementById("arrayTable").innerHTML = tableHTML;
+</script>
+</body>
+</html>

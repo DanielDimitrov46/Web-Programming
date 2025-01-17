@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Двуимен масив 4x5</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Двуимен масив 4x5</h1>
+
+<div id="arrayTable"></div>
+
+<script>
+    // Създаваме двумерен масив 4x5
+    const rows = 4; // 4 реда
+    const cols = 5; // 5 колони
+
+    // Създаваме масива
+    let array = [];
+
+    for (let i = 0; i < rows; i++) {
+        array[i] = []; // Инициализираме реда като нов масив
+        for (let j = 0; j < cols; j++) {
+            // Произведението на индексите на реда и колоната
+            array[i][j] = i * j;
+        }
+    }
+
+    // Извеждаме масива в HTML таблица
+    let tableHTML = "<table>";
+    for (let i = 0; i < rows; i++) {
+        tableHTML += "<tr>";
+        for (let j = 0; j < cols; j++) {
+            tableHTML += `<td>${array[i][j]}</td>`;
+        }
+        tableHTML += "</tr>";
+    }
+    tableHTML += "</table>";
+
+    // Показваме таблицата в контейнера
+    document.getElementById("arrayTable").innerHTML = tableHTML;
+</script>
+</body>
+</html>

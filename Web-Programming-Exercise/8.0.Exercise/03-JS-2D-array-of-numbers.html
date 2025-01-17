@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Операции с двумерен масив</title>
+</head>
+<body>
+<h1>Действия с двумерен масив</h1>
+
+<div id="output"></div>
+
+<script>
+    // Стартов двумерен масив с 3 реда и 4 колони
+    let array = [
+        [1, 2, 3, 4],
+        [5, 6, 7, 8],
+        [9, 10, 11, 12]
+    ];
+
+    // 1. Премахваме първия и последния ред
+    array.shift();  // Премахва първия ред
+    array.pop();    // Премахва последния ред
+
+    // 2. Добавяме нов ред в началото на масива
+    array.unshift([0, 1, 6, 3]);
+
+    // 3. Добавяме нов ред в края на масива
+    array.push([5, 7, 8, 9]);
+
+    // 4. Извеждаме съдържанието на масива
+    let tableHTML = "<pre>"; // Ще използваме <pre> за запазване на форматирането
+    for (let i = 0; i < array.length; i++) {
+        tableHTML += array[i].join(' ') + "\n"; // Преобразуваме елементите в реда в низ с интервал
+    }
+    tableHTML += "</pre>";
+
+    // Извеждаме масива в HTML
+    document.getElementById("output").innerHTML = tableHTML;
+
+    // 5. Извеждаме първия и последния елемент на масива
+    let firstElement = array[0][0];  // Първия елемент
+    let lastElement = array[array.length - 1][array[array.length - 1].length - 1];  // Последния елемент
+
+    console.log("Първи елемент: " + firstElement);
+    console.log("Последен елемент: " + lastElement);
+
+    // 6. Намираме сумата на всички елементи в масива
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array[i].length; j++) {
+            sum += array[i][j];
+        }
+    }
+
+    console.log("Сума на всички елементи: " + sum);
+</script>
+</body>
+</html>

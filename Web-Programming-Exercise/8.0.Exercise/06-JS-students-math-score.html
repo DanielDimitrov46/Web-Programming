@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обработване на резултати от тестове</title>
+</head>
+<body>
+<h1>Резултати от тестовете на студентите</h1>
+
+<script>
+    function processStudentResults() {
+        // Студентите с техните резултати
+        let students = [
+            ['Иван', 85, 92],  // Студент 1: име, тест 1, тест 2
+            ['Мария', 78, 88], // Студент 2: име, тест 1, тест 2
+            ['Петър', 90, 85], // Студент 3: име, тест 1, тест 2
+            ['Анна', 80, 91],  // Студент 4: име, тест 1, тест 2
+        ];
+
+        // 1. Премахваме елемент с индекс 2
+        students.splice(2, 1);
+
+        // 2. Изчисляваме средно аритметично на точките от двата теста за всеки студент
+        for (let i = 0; i < students.length; i++) {
+            let test1 = students[i][1];
+            let test2 = students[i][2];
+            let average = (test1 + test2) / 2;
+            students[i].push(average);  // Добавяме средното в масива
+        }
+
+        // 3. Изчисляваме оценката по формулата: 2 + (k / p * 4)
+        for (let i = 0; i < students.length; i++) {
+            let test1 = students[i][1];
+            let test2 = students[i][2];
+            let k = test1 + test2;
+            let p = (test1 + test2) / 2;
+            let grade = 2 + (k / p * 4);
+            students[i].push(grade.toFixed(2));  // Добавяме оценката и я форматираме до 2 десетични знака
+        }
+
+        // 4. Извеждаме резултата в табличен вид
+        let tableHTML = "<table border='1' style='border-collapse: collapse;'>";
+        tableHTML += "<tr><th>Име</th><th>Тест 1</th><th>Тест 2</th><th>Средно</th><th>Оценка</th></tr>";
+
+        for (let i = 0; i < students.length; i++) {
+            tableHTML += "<tr>";
+            tableHTML += `<td>${students[i][0]}</td>`;  // Име на студента
+            tableHTML += `<td>${students[i][1]}</td>`;  // Тест 1
+            tableHTML += `<td>${students[i][2]}</td>`;  // Тест 2
+            tableHTML += `<td>${students[i][3]}</td>`;  // Средно
+            tableHTML += `<td>${students[i][4]}</td>`;  // Оценка
+            tableHTML += "</tr>";
+        }
+        tableHTML += "</table>";
+
+        // Добавяме таблицата към страницата
+        document.body.innerHTML += tableHTML;
+    }
+
+    // Извикваме функцията
+    processStudentResults();
+</script>
+
+</body>
+</html>

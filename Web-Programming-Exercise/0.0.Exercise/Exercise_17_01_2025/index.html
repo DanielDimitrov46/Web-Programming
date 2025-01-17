@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<p id="1"></p>
+<p id="2"></p>
+<p id="3"></p>
+<p id="4"></p>
+<p id="5"></p>
+<p id="6"></p>
+<p id="7"></p>
+<p id="8"></p>
+</body>
+</html>
+
+<script>
+    let emojis = ["&#128557;", "&#129300;", "&#128526;", "&#128161;", "&#128525;", "&#29300;"];
+    let emojis2 = [];
+    document.getElementById("1").innerHTML = emojis;
+    emojis.shift()
+    document.getElementById("2").innerHTML = emojis;
+    emojis.pop()
+    document.getElementById("3").innerHTML = emojis;
+    emojis.splice(4, 0, '🏝️');
+    document.getElementById("4").innerHTML = emojis;
+    emojis[1] = '&#128508;';
+    document.getElementById("5").innerHTML = emojis;
+    emojis2 = emojis.slice(1, 5);
+    document.getElementById("6").innerHTML = emojis2;
+    let additionalArray = ['@', '%', '#'];
+    let combinedArray = emojis.concat(additionalArray);
+    document.getElementById("7").innerHTML = combinedArray;
+    document.getElementById('8').innerHTML += `<p>Краен масив: ${emojis.join('  ')}</p>`;
+</script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Създаване на двумерен масив</title>
+</head>
+<body>
+<h1>Създаване на двумерен масив с даден брой редове и колони</h1>
+
+<script>
+    function create2Darray(rows, columns) {
+        let value = 0;  // Начална стойност
+
+        // Създаваме двумерен масив
+        let array = [];
+
+        // Външен цикъл за редовете
+        for (let i = 0; i < rows; i++) {
+            let row = []; // Създаваме масив за реда
+
+            // Вътрешен цикъл за колоните
+            for (let j = 0; j < columns; j++) {
+                row.push(value);  // Добавяме стойността в реда
+                value++;  // Увеличаваме стойността
+            }
+
+            // Добавяме реда в двумерния масив
+            array.push(row);
+        }
+
+        // Отпечатваме двумерния масив в конзолата
+        console.log(array);
+
+        // Показваме създадения масив в HTML (по избор)
+        let tableHTML = "<table border='1'>";
+        for (let i = 0; i < array.length; i++) {
+            tableHTML += "<tr>";
+            for (let j = 0; j < array[i].length; j++) {
+                tableHTML += `<td>${array[i][j]}</td>`;
+            }
+            tableHTML += "</tr>";
+        }
+        tableHTML += "</table>";
+
+        document.body.innerHTML += tableHTML;  // Добавяме таблицата към страницата
+    }
+
+    // Примерно извикване на функцията с 4 реда и 5 колони
+    create2Darray(4, 5);
+</script>
+</body>
+</html>

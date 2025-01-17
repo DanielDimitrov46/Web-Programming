@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реферат</title>
+</head>
+<body>
+<h1>Реферат: Теми</h1>
+
+<script>
+    // Първият стринг с числата от 1 до 5
+    let numbers = "1 2 3 4 5";
+
+    // Вторият стринг с имената на темите
+    let topics = "Променливи,Операции,Конструкции,Масиви,Функции";
+
+    // Извеждаме числата в конзолата
+    console.log("Числа: " + numbers);
+
+    // Разделяме темите по запетая
+    let topicArray = topics.split(",");
+
+    // Създаваме неподреден списък в HTML
+    let listHTML = "<ul>";
+    for (let i = 0; i < topicArray.length; i++) {
+        listHTML += `<li>${topicArray[i]}</li>`;
+    }
+    listHTML += "</ul>";
+
+    // Добавяме списъка към тялото на HTML страницата
+    document.body.innerHTML += listHTML;
+</script>
+
+</body>
+</html>

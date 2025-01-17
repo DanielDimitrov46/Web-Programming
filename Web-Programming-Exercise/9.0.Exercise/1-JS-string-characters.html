@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Работа със стринг</title>
+</head>
+<body>
+<h1>Работа със стринг в JavaScript</h1>
+
+<script>
+    // Създаване на стринг
+    let str = "примерен текст за задачата";
+
+    // Извеждане на първия и последния символ на стринга
+    let firstChar = str.charAt(0);  // Първи символ
+    let lastChar = str.charAt(str.length - 1);  // Последен символ
+
+    alert("Първи символ: " + firstChar + "\nПоследен символ: " + lastChar);
+
+    // Заменяме малките букви "е" с главни "Е"
+    let modifiedStr = str.replace(/е/g, "Е");
+
+    // Извеждаме променения стринг
+    alert("Променен стринг: " + modifiedStr);
+</script>
+
+</body>
+</html>

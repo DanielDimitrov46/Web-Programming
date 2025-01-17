@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сума на диагонали</title>
+</head>
+<body>
+<h1>Намиране на сумите на диагоналите в матрица</h1>
+
+<script>
+    function diagonalSums(matrix) {
+        let mainDiagonalSum = 0;  // Сума на главния диагонал
+        let secondaryDiagonalSum = 0;  // Сума на второстепенния диагонал
+
+        // Обхождаме матрицата с цикли
+        let n = matrix.length; // Броят на редовете (или колоните, тъй като матрицата е квадратна)
+
+        for (let i = 0; i < n; i++) {
+            mainDiagonalSum += matrix[i][i];  // Събираме елементите на главния диагонал
+            secondaryDiagonalSum += matrix[i][n - i - 1];  // Събираме елементите на второстепенния диагонал
+        }
+
+        // Извеждаме резултатите в конзолата
+        console.log("Сума на главния диагонал: " + mainDiagonalSum);
+        console.log("Сума на второстепенния диагонал: " + secondaryDiagonalSum);
+    }
+
+    // Пример за извикване на функцията с квадратна матрица
+    let matrix = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ];
+
+    diagonalSums(matrix);  // Извикваме функцията с примерна матрица
+</script>
+</body>
+</html>
