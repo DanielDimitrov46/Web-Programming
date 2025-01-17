@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trapezoid Area</title>
+</head>
+<body>
+<label for="b1">Base 1:</label>
+<input type="number" id="b1">
+<label for="b2">Base 2:</label>
+<input type="number" id="b2">
+<label for="h">Height:</label>
+<input type="number" id="h">
+<button onclick="calculateArea()">Calculate</button>
+<p id="result"></p>
+
+<script>
+    function calculateArea() {
+        const b1 = parseFloat(document.getElementById('b1').value);
+        const b2 = parseFloat(document.getElementById('b2').value);
+        const h = parseFloat(document.getElementById('h').value);
+        const area = ((b1 + b2) * h) / 2;
+        document.getElementById('result').textContent = `Area: ${area.toFixed(2)}`;
+    }
+</script>
+</body>
+</html>

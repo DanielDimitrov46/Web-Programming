@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passport Eligibility</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>Passport Eligibility Check</h1>
+<p>Enter your age to check if you are eligible for a passport and what type:</p>
+
+<input type="number" id="age" placeholder="Enter your age">
+<button onclick="checkPassportEligibility()">Check Eligibility</button>
+
+<p id="result"></p>
+
+<script>
+    // Expressive function to check passport eligibility
+    const checkPassportEligibility = () => {
+        const age = parseInt(document.getElementById('age').value);
+        const resultElement = document.getElementById('result');
+
+        if (isNaN(age) || age < 0) {
+            resultElement.textContent = "Please enter a valid age.";
+            return;
+        }
+
+        // Determine eligibility and passport type using an expressive function
+        resultElement.textContent = (age < 18)
+            ? "You are not eligible for a passport yet."
+            : (age >= 18 && age < 65)
+                ? "You are eligible for an adult passport."
+                : "You are eligible for a senior citizen's passport.";
+    }
+</script>
+</body>
+</html>
