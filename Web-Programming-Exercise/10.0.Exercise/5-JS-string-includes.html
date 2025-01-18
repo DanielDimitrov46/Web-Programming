@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Търсене на дума</title>
+</head>
+<body>
+<h1>Търсене на дума в изречение</h1>
+<label for="sentenceInput">Въведете изречение:</label><br>
+<textarea id="sentenceInput" rows="4" cols="50" placeholder="Напишете изречение тук..." style="margin: 10px 0;"></textarea><br>
+
+<label for="wordInput">Въведете дума за търсене:</label><br>
+<input type="text" id="wordInput" placeholder="Напишете дума" style="margin: 10px 0; width: 300px;"><br>
+
+<button onclick="searchWordInSentence()" style="padding: 5px 10px;">Търси</button>
+
+<script>
+    function searchWordInSentence() {
+        // Вземаме изречението и думата от потребителя
+        const sentence = document.getElementById("sentenceInput").value;
+        const word = document.getElementById("wordInput").value;
+
+        // Проверяваме дали думата съществува в изречението (case-insensitive)
+        const regex = new RegExp(`\\b${word}\\b

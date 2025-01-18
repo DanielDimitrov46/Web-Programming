@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка на имейл</title>
+</head>
+<body>
+<h1>Проверка на имейл</h1>
+<label for="emailInput">Въведете имейл:</label>
+<input type="text" id="emailInput" placeholder="example@example.com" style="width: 300px; padding: 5px;">
+<button onclick="checkEmailSymbols()" style="padding: 5px 10px; margin-left: 10px;">Провери</button>
+
+<script>
+    function checkEmailSymbols() {
+        // Вземаме въведения имейл
+        const email = document.getElementById("emailInput").value;
+
+        // Проверяваме дали съдържа валидните символи
+        const hasAt = email.includes("@");
+        const hasDot = email.includes(".");
+        const hasTilde = email.includes("~");
+
+        // Съобщение за резултатите
+        let message = "Резултати от проверката:\n";
+        message += hasAt ? "✔ Имейлът съдържа '@'.\n" : "✘ Имейлът НЕ съдържа '@'.\n";
+        message += hasDot ? "✔ Имейлът съдържа '.'.\n" : "✘ Имейлът НЕ съдържа '.'.\n";
+        message += hasTilde ? "✔ Имейлът съдържа '~'.\n" : "✘ Имейлът НЕ съдържа '~'.\n";
+
+        // Показваме съобщение с резултатите
+        alert(message);
+    }
+</script>
+</body>
+</html>

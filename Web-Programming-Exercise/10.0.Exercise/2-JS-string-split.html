@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Съдържание на реферат</title>
+</head>
+<body>
+<h1>Съдържание на реферат</h1>
+
+<script>
+    // Инициализираме двата стринга
+    let numbers = "1 2 3 4 5";
+    let topics = "Променливи,Операции,Конструкции,Масиви,Функции";
+
+    // Преобразуваме втория стринг в масив
+    let topicsArray = topics.split(",");
+
+    // Създаваме HTML за неподреден списък
+    let listHTML = "<ul>";
+    for (let i = 0; i < topicsArray.length; i++) {
+        listHTML += `<li>${numbers.split(" ")[i]} - ${topicsArray[i]}</li>`;
+    }
+    listHTML += "</ul>";
+
+    // Добавяме списъка към страницата
+    document.body.innerHTML += listHTML;
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анализ и трансформация на текст</title>
+</head>
+<body>
+<h1>Анализ и трансформация на текст</h1>
+<script>
+    function analyzeAndTransformText() {
+        let inputText = null;
+
+        // 1. Въвеждане на текст
+        do {
+            inputText = prompt("Моля, въведете текст:");
+            if (!inputText || inputText.trim() === "") {
+                alert("Грешка: Текстът не може да бъде празен или да съдържа само интервали.");
+            }
+        } while (!inputText || inputText.trim() === "");
+
+        // Премахваме излишните интервали
+        inputText = inputText.trim();
+
+        // 2. Анализ на текста
+        const totalCharacters = inputText.length;
+        const words = inputText.split(/\s+/); // Разделяме думите с един или повече интервали
+        const wordCount = words.length;
+        const vowels = inputText.match(/[аеiouАЕIOU]/g); // Намираме всички гласни
+        const vowelCount = vowels ? vowels.length : 0;
+
+        // 3. Трансформация на текста
+        const transformedWords = words.map(word => {
+            const letterCount = word.length;
+            if (letterCount % 2 === 0) {
+                return word.toUpperCase(); // Главни букви за четен брой букви
+            } else {
+                return word.split("").reverse().join(""); // Обърнат текст за нечетен брой букви
+            }
+        });
+        const transformedText = transformedWords.join(" ");
+
+        // 4. Извеждане на резултати
+        console.log("Анализ на текста:");
+        console.log(`Общ брой символи (включително интервали): ${totalCharacters}`);
+        console.log(`Брой думи: ${wordCount}`);
+        console.log(`Брой гласни букви: ${vowelCount}`);
+        console.log("Трансформиран текст:");
+        console.log(transformedText);
+    }
+
+    // Стартиране на програмата
+    analyzeAndTransformText();
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>Валидатор на имейл</title>
+</head>
+<body>
+<h1>Проверка на имейл</h1>
+<input type="text" id="email" placeholder="Въведете имейл">
+<button onclick="validateEmail()">Провери</button>
+<p id="result"></p>
+
+<script>
+    function validateEmail() {
+        const email = document.getElementById("email").value;
+        const regex = /^[a-zA-Z][\w.-]*@[a-zA-Z]+\.[a-z]{2,}$/;
+        const result = regex.test(email);
+        document.getElementById("result").textContent = result ? "Валиден имейл" : "Невалиден имейл";
+    }
+</script>
+</body>
+</html>

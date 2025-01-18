@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Работа със стринг</title>
+</head>
+<body>
+<script>
+    // Създаваме стринг
+    let str = "примерен текст за задачата";
+
+    // Вземаме първия и последния символ
+    let firstChar = str.charAt(0); // Първи символ
+    let lastChar = str.charAt(str.length - 1); // Последен символ
+
+    // Показваме първия и последния символ в прозорец със съобщение
+    alert("Първи символ: " + firstChar + "\nПоследен символ: " + lastChar);
+
+    // Заменяме всички малки букви "е" с главни "Е"
+    let modifiedStr = str.replace(/е/g, "Е");
+
+    // Показваме променения стринг в ново съобщение
+    alert("Променен стринг: " + modifiedStr);
+</script>
+</body>
+</html>

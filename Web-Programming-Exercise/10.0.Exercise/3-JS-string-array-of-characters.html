@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Текст вертикално</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            margin-top: 20px;
+            font-size: 20px;
+            text-align: left;
+        }
+        .vertical-text {
+            white-space: pre-wrap; /* Позволява нови редове */
+            font-size: 24px;
+            text-transform: uppercase;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<h1>Въведете текст</h1>
+<input type="text" id="inputText" placeholder="Въведете текст тук" style="width: 300px; padding: 5px;">
+<button onclick="displayVerticalText()" style="padding: 5px 10px; margin-left: 10px;">Покажи вертикално</button>
+
+<h2 id="output" class="vertical-text"></h2>
+
+<script>
+    function displayVerticalText() {
+        // Вземаме въведения текст
+        const input = document.getElementById("inputText").value;
+
+        // Преобразуваме текста във вертикален, като всяка буква е на нов ред
+        const verticalText = input.split("").join("\n");
+
+        // Извеждаме резултата в елемента h2
+        document.getElementById("output").textContent = verticalText;
+    }
+</script>
+</body>
+</html>
