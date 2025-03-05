@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Ivan Petrov",
+    "age": 28,
+    "profession": "Programmer",
+    "hobbies": ["Programming","Driving", "Cycling"]
+  },
+  {
+    "id": 2,
+    "name": "Petko Dimitrov",
+    "age": 26,
+    "profession": "Welder",
+    "hobbies": ["Programming","Writing", "Photography"]
+  },
+  {
+  "id": 3,
+  "name": "Mitko Jordanov",
+  "age": 24,
+  "profession": "Sportist",
+  "hobbies": ["Eating","Running", "Walkingcd"]
+}
+]
